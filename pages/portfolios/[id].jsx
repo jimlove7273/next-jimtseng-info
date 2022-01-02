@@ -54,7 +54,7 @@ export const getStaticProps = async ({params: { id }}) => {
 
 export const getStaticPaths = async () => {
 
-	const res = await fetch("http://localhost:3000/api/portfolios");
+	const res = await fetch("/api/portfolios");
 	const portfolios = await res.json();
 	
 	const paths = portfolios.map( portfolio => ({

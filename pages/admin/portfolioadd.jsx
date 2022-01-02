@@ -30,7 +30,7 @@ const PortfolioAdd = () => {
 		debugger
 		console.log("data", data)
 
-		const updentry = fetch('http://localhost:3000/api/portfolios/', {
+		const updentry = fetch('/api/portfolios/', {
 			method: 'POST',
       headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(data)
@@ -39,7 +39,7 @@ const PortfolioAdd = () => {
 		.then( data => console.log(data) )
 		.catch(error => console.log("Error: " + error))
 		
-		router.push("http://localhost:3000/admin/portfolios/")
+		router.push("/admin/portfolios/")
 	}
 
 

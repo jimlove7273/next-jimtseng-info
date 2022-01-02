@@ -13,7 +13,7 @@ const Portfolios = ({portfolios}) => {
 		const del = confirm("Are you sure you want to delete "+portfolioid)
 		if (del) {
 			try {
-        let response = await fetch("http://localhost:3000/api/portfolios", {
+        let response = await fetch("/api/portfolios", {
             method: "DELETE",
             body: JSON.stringify({
               id: portfolioid
@@ -22,7 +22,7 @@ const Portfolios = ({portfolios}) => {
               "Content-Type": "application/json",
             },
 				});
-				router.push('http://localhost:3000/admin/portfolios')
+				router.push('/admin/portfolios')
 			} catch (err) {
 				console.log("Some Error Occurred")
 			}
@@ -75,7 +75,7 @@ export default Portfolios
 
 export async function getServerSideProps() {
 
-	const res = await fetch('http://localhost:3000/api/portfolios')
+	const res = await fetch('/api/portfolios')
 	//console.log("res", res)
 	const portfolios = await res.json()
 	//console.log("portfolios", portfolios)

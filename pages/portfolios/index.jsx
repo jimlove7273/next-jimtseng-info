@@ -28,7 +28,7 @@ export default function indexBlogs({ portfolios }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/portfolios");
+  const res = await fetch("/api/portfolios");
   //console.log("res", res);
   const portfolios = await res.json();
 
