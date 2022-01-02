@@ -96,10 +96,10 @@ export default function Home({blogs, portfolios}) {
 
 
 export async function getStaticProps() {
-  const resblogs = await fetch('http://localhost:3000/api/blogs')
+  const resblogs = await fetch('/api/blogs')
   const blogs = await resblogs.json()
 
-  const resportfolios = await fetch('http://localhost:3000/api/portfolios')
+  const resportfolios = await fetch('/api/portfolios')
   const portfolios = await resportfolios.json()
 
   //console.log("blogs", blogs)
